@@ -12,6 +12,9 @@ public class User {
 
     private Pet pet;
 
+    public User() {
+    }
+
     public Pet getPet() {
         return pet;
     }

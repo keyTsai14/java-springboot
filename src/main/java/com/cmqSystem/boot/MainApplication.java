@@ -1,17 +1,25 @@
 package com.cmqSystem.boot;
 
+import ch.qos.logback.classic.db.DBHelper;
 import com.cmqSystem.boot.bean.Pet;
 import com.cmqSystem.boot.bean.User;
 import com.cmqSystem.boot.config.MyConfig;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.SpringBootConfiguration;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.ComponentScans;
 
 /**
  * @author key
  * @description @SpringBootApplication：这个是一个SpringBoot应用
  * */
 @SpringBootApplication
+//@EnableAutoConfiguration
+//@SpringBootConfiguration
+//@ComponentScan("com.cmqSystem.boot")
 public class MainApplication {
 
     public static void main(String[] args) {
@@ -45,6 +53,16 @@ public class MainApplication {
 
         User user01 = run.getBean("user01", User.class);
         System.out.println("用户的宠物："+(tom== user01.getPet()));
+
+        // 5 容器中获取组件
+        String[] beanNamesForType = run.getBeanNamesForType(User.class);
+        System.out.println("========");
+        for (String s : beanNamesForType) {
+            System.out.println(s);
+        }
+
+        DBHelper bean1 = run.getBean(DBHelper.class);
+        System.out.println(bean1);
 
 
     }
