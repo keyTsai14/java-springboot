@@ -26,7 +26,7 @@ import org.springframework.context.annotation.Import;
  *      给容器中自动创建出这两个类型的组件、默认组件的名字就是全类名
  **/
 @Import({User.class, DBHelper.class})
-@Configuration(proxyBeanMethods = false) // 告诉SpringBoot这是一个配置类 == 配置文件
+@Configuration(proxyBeanMethods = true) // 告诉SpringBoot这是一个配置类 == 配置文件
 public class MyConfig {
 
 
