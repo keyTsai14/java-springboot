@@ -1,8 +1,12 @@
 package com.cmqSystem.boot.config;
 
 import ch.qos.logback.classic.db.DBHelper;
+import com.cmqSystem.boot.bean.Car;
 import com.cmqSystem.boot.bean.Pet;
 import com.cmqSystem.boot.bean.User;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
@@ -27,6 +31,10 @@ import org.springframework.context.annotation.Import;
  **/
 @Import({User.class, DBHelper.class})
 @Configuration(proxyBeanMethods = true) // 告诉SpringBoot这是一个配置类 == 配置文件
+//@ConditionalOnMissingBean(name = "tom01")
+// 1、开启 car 配置绑定功能
+// 2、把这个 car 这个组件自动注册到容器中  ---》 car 不一定是自己定义
+@EnableConfigurationProperties(Car.class)
 public class MyConfig {
 
 

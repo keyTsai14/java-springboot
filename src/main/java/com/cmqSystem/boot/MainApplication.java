@@ -1,6 +1,7 @@
 package com.cmqSystem.boot;
 
 import ch.qos.logback.classic.db.DBHelper;
+import com.cmqSystem.boot.bean.Car;
 import com.cmqSystem.boot.bean.Pet;
 import com.cmqSystem.boot.bean.User;
 import com.cmqSystem.boot.config.MyConfig;
@@ -8,6 +9,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.ComponentScans;
@@ -63,6 +65,10 @@ public class MainApplication {
 
         DBHelper bean1 = run.getBean(DBHelper.class);
         System.out.println(bean1);
+
+
+        boolean b = run.containsBean("user01");
+        System.out.println(b);
 
 
     }
