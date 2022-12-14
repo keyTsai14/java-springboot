@@ -1,6 +1,7 @@
 package com.cmqSystem.boot.controller;
 
 import com.cmqSystem.boot.bean.Car;
+import com.cmqSystem.boot.bean.Person;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,6 +20,8 @@ public class HelloController {
 
     @Autowired
     Car car;
+    @Autowired
+    Person person;
 
     @RequestMapping("/hello")
     public String handle01(@RequestParam("name")String name) {
@@ -29,6 +32,11 @@ public class HelloController {
     @RequestMapping("/car")
     public Car car() {
         return car;
+    }
+
+    @RequestMapping("/person")
+    public Person person() {
+        return person;
     }
 
 }

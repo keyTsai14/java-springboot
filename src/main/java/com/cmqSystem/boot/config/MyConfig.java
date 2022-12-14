@@ -52,7 +52,7 @@ public class MyConfig {
     @Bean("tom")
     public Pet tomcatPet() {
 
-        return new Pet("tomcat");
+        return new Pet("tomcat",1.0);
     }
 
 }

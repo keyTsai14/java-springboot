@@ -17,4 +17,5 @@ import lombok.ToString;
 public class Pet {
 
     private String name;
+    private Double weight;
 }
