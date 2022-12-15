@@ -1,9 +1,14 @@
 # 请求静态资源目录
-#spring:
-#  mvc:
+spring:
+  mvc:
 #    static-path-pattern: /res/**
 
 #   改变默认的静态资源路径
 #  resources:
 #    static-locations: [classpath:/haha/]
+
+    # 开启页面表单的rest功能
+    hiddenmethod:
+      filter:
+        enabled: true
 

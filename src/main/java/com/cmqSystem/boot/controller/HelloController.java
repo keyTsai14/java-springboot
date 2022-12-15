@@ -4,9 +4,7 @@ import com.cmqSystem.boot.bean.Car;
 import com.cmqSystem.boot.bean.Person;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @author key
@@ -43,5 +41,28 @@ public class HelloController {
     public String hello() {
         return "aaa";
     }
+
+//    @RequestMapping(value = "/user",method = RequestMethod.GET)
+    @GetMapping("/user")
+    public String getUser(){
+        return "getUser";
+    }
+//    @RequestMapping(value = "/user",method = RequestMethod.DELETE)
+    @DeleteMapping("/user")
+    public String deleteUser(){
+        return "deleteUser";
+    }
+//    @RequestMapping(value = "/user",method = RequestMethod.PUT)
+    @PutMapping("/user")
+    public String putUser(){
+        return "putUser";
+    }
+//    @RequestMapping(value = "/user",method = RequestMethod.POST)
+    @PostMapping("/user")
+    public String saveUser(){
+        return "postUser";
+    }
+
+
 
 }
