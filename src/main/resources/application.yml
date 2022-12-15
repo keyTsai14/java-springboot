@@ -1,9 +1,9 @@
 # 请求静态资源目录
-spring:
-  mvc:
-    static-path-pattern: /res/**
+#spring:
+#  mvc:
+#    static-path-pattern: /res/**
 
-  # 改变默认的静态资源路径
+#   改变默认的静态资源路径
 #  resources:
 #    static-locations: [classpath:/haha/]
 
