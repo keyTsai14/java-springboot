@@ -39,4 +39,9 @@ public class HelloController {
         return person;
     }
 
+    @RequestMapping("/banner.jpg")
+    public String hello() {
+        return "aaa";
+    }
+
 }

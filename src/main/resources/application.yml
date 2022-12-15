@@ -1,39 +1,9 @@
-person:
-  userName: zhangsan
-  boss: true
-  birth: 2019/11/11
-  age: 18
-  interests:
-    - 篮球
-    - 足球
-    - 18
-  animal: [cat,dog]
-  score: {english:80,math:90}
-  salarys:
-    - 9999.98
-    - 9999.99
-  pet:
-    name: tom
-    weight: 99.99
-  allPets:
-    sick:
-      - {name: tom,weight: 99.99}
-      - name: jerry
-        weight: 88.88
-      - name: linda
-        weight: 66.66
-    health:
-      - { name: tom1,weight: 99.99 }
-      - name: jerry2
-        weight: 88.88
-      - name: linda3
-        weight: 66.66
-#spring:
-#  banner:
-#    location:
-#    image:
-#      bitdepth: 4
-#  cache:
-#    type: redis
-#    redis:
-#      time-to-live: 11000
+# 请求静态资源目录
+spring:
+  mvc:
+    static-path-pattern: /res/**
+
+  # 改变默认的静态资源路径
+#  resources:
+#    static-locations: [classpath:/haha/]
+
