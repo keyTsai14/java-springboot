@@ -30,6 +30,10 @@
     <li>@RequestAttribute(获取request域属性)</li>
     <li>@RequestBody(获取请求体)</li>
     <li>@MatrixVariable(矩阵变量)</li>
+
+    <a href="/cars/sell;low=34;brand=byd,audi,yd">@MatrixVariable(矩阵a变量)</a>
+    <a href="/cars/sell;low=34;brand=byd;brand=audi;brand=yd">@MatrixVariable ()</a>
+    <a href="/boss/1;age=20/2;age=10">@MatrixVariable (/boss/{bossId}/{empId}</a>
 </u1>
 </body>
 </html>

@@ -3,6 +3,7 @@ package com.cmqSystem.boot.controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -31,6 +32,24 @@ public class ParameterTestController {
 //        result.put("headers",headers);
         result.put("token",token);
         return result;
+    }
+
+
+    // /cars/sell;low=34;brand=byd,audi,yd
+    // SpringBoot 默认是禁用了矩阵变量的功能 ---> 需要手动开启
+    // 原理：对于路径的处理。UrlHelper进行解析。removeSemicolonContent（移除分号）支持矩阵变量的
+
+    @GetMapping("/cars/{path}")
+    public Map carsSell(
+            @MatrixVariable("low") Integer low,
+            @MatrixVariable("brand") List<String> brand,
+            @PathVariable("path") String path
+    ) {
+        Map<String,Object> map = new HashMap<>();
+        map.put("low",low);
+        map.put("brand",brand);
+        map.put("path",path);
+        return map;
     }
 
 }
