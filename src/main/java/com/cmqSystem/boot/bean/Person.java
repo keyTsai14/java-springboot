@@ -16,20 +16,20 @@ import java.util.Set;
  * @Author admin
  * @Date 2022/12/14
  **/
-@ConfigurationProperties(prefix = "person")
+//@ConfigurationProperties(prefix = "person")
 @Component
 @ToString
 @Data
 public class Person {
 
     private String userName;
-    private Boolean boss;
+//    private Boolean boss;
     private Date birth;
     private Integer age;
     private Pet pet;
-    private String[]interests;
-    private List<String> animal;
-    private Map<String,Object> score;
-    private Set<Double> salarys;
-    private Map<String,List<Pet>>allPets;
+//    private String[]interests;
+//    private List<String> animal;
+//    private Map<String,Object> score;
+//    private Set<Double> salarys;
+//    private Map<String,List<Pet>>allPets;
 }

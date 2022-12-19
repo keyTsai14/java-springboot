@@ -1,5 +1,6 @@
 package com.cmqSystem.boot.controller;
 
+import com.cmqSystem.boot.bean.Person;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
@@ -13,6 +14,15 @@ import java.util.Map;
  **/
 @RestController
 public class ParameterTestController {
+
+    /**
+     * @Description 数据绑定：页面提交的请求数据(GET、POST)都可以和对象属性进行绑定
+     **/
+    @PostMapping("/saveuser")
+    public Person saveuser(Person person) {
+        return person;
+    }
+
 
     @GetMapping("/car/{id}/owner/{username}")
     public Map<String, Object> getCar(@PathVariable("id") Integer id,

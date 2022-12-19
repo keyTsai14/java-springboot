@@ -21,7 +21,7 @@
     <input value="REST-PUT 提交" type="submit" />
 </form>
 测试基本注解：
-<u1>
+<ul>
     <a href="car/3/owner/lisi">car/{id}/owner/{username}</a>
     <li>@PathVariable(路径变量)</li>
     <li>@RequestHeader(获取请求头)</li>
@@ -34,6 +34,14 @@
     <a href="/cars/sell;low=34;brand=byd,audi,yd">@MatrixVariable(矩阵a变量)</a>
     <a href="/cars/sell;low=34;brand=byd;brand=audi;brand=yd">@MatrixVariable ()</a>
     <a href="/boss/1;age=20/2;age=10">@MatrixVariable (/boss/{bossId}/{empId}</a>
-</u1>
+</ul>
+<form action="/saveuser" method="post">
+    姓名：<input name="userName" value="zhangsan"/><br/>
+    年龄：<input name="age" value="18"/><br/>
+    生日：<input name="birth" value="2019/12/10"/><br/>
+    宠物姓名：<input name=:"pet.name" value="阿猫"/><br/>
+    宠物年龄：<input name="pet.age" value="5"/>
+    <input type="submit" value="保存"/>
+</form>
 </body>
 </html>
