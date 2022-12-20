@@ -1,6 +1,7 @@
 package com.cmqSystem.boot.controller;
 
 import com.cmqSystem.boot.bean.Person;
+import org.springframework.core.io.FileSystemResource;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -15,7 +16,15 @@ import java.util.Date;
 @Controller
 public class ResponseTestController {
 
-    @ResponseBody
+
+    @ResponseBody //--RequestResponseBodyMethodProcessor ---messageConverter
+    @GetMapping("/he11")
+    public FileSystemResource file(){
+        // 文件以这样的方式返回
+        return null;
+    }
+
+    @ResponseBody // 利用返回值处理器里面的消息转换器进行处理
     @GetMapping("/test/person")
     public Person getPerson() {
         Person person = new Person();
