@@ -18,4 +18,5 @@ public class Pet {
 
     private String name;
     private Double weight;
+    private Integer age;
 }
