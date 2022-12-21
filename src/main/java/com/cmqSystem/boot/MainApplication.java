@@ -7,9 +7,13 @@ import com.cmqSystem.boot.bean.User;
 import com.cmqSystem.boot.config.MyConfig;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.SpringBootConfiguration;
+import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
+import org.springframework.boot.autoconfigure.web.servlet.WebMvcProperties;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.cache.interceptor.CacheAspectSupport;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.ComponentScans;
@@ -18,7 +22,7 @@ import org.springframework.context.annotation.ComponentScans;
  * @author key
  * @description @SpringBootApplication：这个是一个SpringBoot应用
  * */
-@SpringBootApplication
+@SpringBootApplication(exclude = DataSourceAutoConfiguration.class)
 //@EnableAutoConfiguration
 //@SpringBootConfiguration
 //@ComponentScan("com.cmqSystem.boot")
@@ -69,6 +73,10 @@ public class MainApplication {
 //
 //        boolean b = run.containsBean("user01");
 //        System.out.println(b);
+
+
+        String[] beanNamesForType1 = run.getBeanNamesForType(WebMvcProperties.class);
+        System.out.println(beanNamesForType1.length);
 
 
     }
