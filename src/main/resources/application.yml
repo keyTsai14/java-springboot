@@ -11,4 +11,10 @@ spring:
     hiddenmethod:
       filter:
         enabled: true
+    contentnegotiation:
+      favor-parameter: true #开启请求参数内容协商模式
 
+
+  resources:
+    cache:
+      period: 11000
