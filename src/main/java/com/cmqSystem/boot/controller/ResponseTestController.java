@@ -24,6 +24,16 @@ public class ResponseTestController {
         return null;
     }
 
+    /**
+     * 1、浏览器发清求直接返回xml 【application/xmL】  jacksonXmLConverter
+     * 2、如果是ajax清求返回json [application/json]  jackson]sonConverter
+     * 3、如果硅谷app发请求，返回自定义协议数据 [application/x-guigu] xxxxConverter
+     *          属性1;属性2
+     *步骤：
+     * 1、添加自定义的MessageConverter逃系统底层
+     * 2、系统底层就会统计出所有MessageConverter,能操作哪些类型
+     * 3、客户端内容协商[gu1gu-->guigu]
+     * */
     @ResponseBody // 利用返回值处理器里面的消息转换器进行处理
     @GetMapping("/test/person")
     public Person getPerson() {
