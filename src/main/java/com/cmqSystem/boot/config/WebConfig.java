@@ -10,6 +10,7 @@ import org.springframework.format.FormatterRegistry;
 import org.springframework.http.MediaType;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.util.StringUtils;
+import org.springframework.web.accept.HeaderContentNegotiationStrategy;
 import org.springframework.web.accept.ParameterContentNegotiationStrategy;
 import org.springframework.web.filter.HiddenHttpMethodFilter;
 import org.springframework.web.servlet.config.annotation.ContentNegotiationConfigurer;
@@ -60,8 +61,10 @@ public class WebConfig implements WebMvcConfigurer {
                 mediaTypeMap.put("xml",MediaType.APPLICATION_XML);
                 mediaTypeMap.put("gg",MediaType.parseMediaType("application/x-guigu"));
                 ParameterContentNegotiationStrategy parameterContentNegotiationStrategy = new ParameterContentNegotiationStrategy(mediaTypeMap);
+//                parameterContentNegotiationStrategy.setParameterName("ff");
+                HeaderContentNegotiationStrategy headerContentNegotiationStrategy = new HeaderContentNegotiationStrategy();
 
-                configurer.strategies(Arrays.asList(parameterContentNegotiationStrategy));
+                configurer.strategies(Arrays.asList(parameterContentNegotiationStrategy,headerContentNegotiationStrategy));
             }
 
             @Override
