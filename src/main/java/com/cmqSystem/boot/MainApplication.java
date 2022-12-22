@@ -75,8 +75,8 @@ public class MainApplication {
 //        System.out.println(b);
 
 
-        String[] beanNamesForType1 = run.getBeanNamesForType(WebMvcProperties.class);
-        System.out.println(beanNamesForType1.length);
+//        String[] beanNamesForType1 = run.getBeanNamesForType(WebMvcProperties.class);
+//        System.out.println(beanNamesForType1.length);
 
 
     }
