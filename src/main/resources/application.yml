@@ -18,3 +18,6 @@ spring:
   resources:
     cache:
       period: 11000
+#server:
+#  servlet:
+#    context-path: /world
