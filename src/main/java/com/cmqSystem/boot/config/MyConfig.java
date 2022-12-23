@@ -42,11 +42,11 @@ public class MyConfig {
      * 外部无论对配置类中的这个组件注册方法调用多少次获取的都是之前注册容器中的单实例
      **/
     @Bean // 给容器中添加组件，以方法名作为组件的id，返回类型就是组件类型。返回值，就是组件在容器中的事例
-    public User user01() {
-        User abby = new User("Abby", 18);
-        // user 组件依赖了Pet组件
-        abby.setPet(tomcatPet());
-        return abby;
+    public void user01() {
+//        User abby = new User("Abby", 18);
+//        // user 组件依赖了Pet组件
+//        abby.setPet(tomcatPet());
+//        return abby;
     }
 
     @Bean("tom")

@@ -11,18 +11,16 @@ import lombok.ToString;
  * @create: 2022-10-15 16:59
  */
 @Data
-@ToString
-@AllArgsConstructor
-@NoArgsConstructor
 public class User {
 
-    private String name;
-    private Integer age;
+    private String username;
+    private String password;
+//    private Integer age;
 
-    private Pet pet;
-
-    public User(String name, Integer age) {
-        this.name = name;
-        this.age = age;
-    }
+//    private Pet pet;
+//
+//    public User(String name, Integer age) {
+//        this.name = name;
+//        this.age = age;
+//    }
 }
