@@ -3,6 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>主页</title>
+
+    <!-- include 不保留大标签 <head></head> -->
+    <link th:include="common :: commonheader">
+    <div th:include="common :: commonheader"></div>
+    <!-- replace 保留大标签 <head></head> -->
+<!--    <link th:replace="common :: commonheader">-->
 </head>
 <body>
 <h1>登录成功！！！</h1>
