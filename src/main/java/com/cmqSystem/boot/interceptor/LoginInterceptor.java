@@ -34,8 +34,10 @@ public class LoginInterceptor implements HandlerInterceptor {
             return true;
         }
         //拦截住。未登录。跳转到登录页
-        session.setAttribute("msg","请先登录！");
-        response.sendRedirect("/");
+//        session.setAttribute("msg","请先登录！");
+//        response.sendRedirect("/");
+        request.setAttribute("msg","请先登录!!");
+        request.getRequestDispatcher("/").forward(request,response);
 
         return false;
     }
