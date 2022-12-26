@@ -13,6 +13,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.boot.autoconfigure.web.servlet.WebMvcProperties;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.cache.interceptor.CacheAspectSupport;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
@@ -22,6 +23,7 @@ import org.springframework.context.annotation.ComponentScans;
  * @author key
  * @description @SpringBootApplication：这个是一个SpringBoot应用
  * */
+//@ServletComponentScan
 @SpringBootApplication(exclude = DataSourceAutoConfiguration.class)
 //@EnableAutoConfiguration
 //@SpringBootConfiguration
