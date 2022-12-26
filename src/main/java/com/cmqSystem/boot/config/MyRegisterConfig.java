@@ -17,7 +17,8 @@ import java.util.Arrays;
  * @description
  * @create: 2022-12-26 15:19
  */
-@Configuration
+// (proxyBeanMethods=true):保证依赖的组件始终是【单实例】的
+@Configuration(proxyBeanMethods = true)
 public class MyRegisterConfig {
 
     @Bean
