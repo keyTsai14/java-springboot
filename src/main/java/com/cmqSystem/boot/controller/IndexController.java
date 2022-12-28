@@ -1,6 +1,8 @@
 package com.cmqSystem.boot.controller;
 
+import com.cmqSystem.boot.bean.Account;
 import com.cmqSystem.boot.bean.User;
+import com.cmqSystem.boot.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
@@ -8,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpSession;
@@ -22,6 +25,14 @@ public class IndexController {
 
     @Autowired
     JdbcTemplate jdbcTemplate;
+    @Autowired
+    AccountService accountService;
+
+    @ResponseBody
+    @GetMapping("getAcct")
+    public Account getById(@RequestParam("id") Long id) {
+        return accountService.getAcct(id);
+    }
 
     @ResponseBody
     @GetMapping("/sql")

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cmqSystem.boot.mapper.AccountMapper">
+    <!--    public Account getAcct(Long id); -->
+    <select id="getAcct" resultType="com.cmqSystem.boot.bean.Account">
+        select * from  account where  id=#{id}
+    </select>
+</mapper>
