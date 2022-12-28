@@ -22,6 +22,14 @@ spring:
     multipart:
       max-file-size: 10MB
       max-request-size: 100MB
+  datasource:
+    url: jdbc:mysql://localhost:3306/test_data?useSSL=false&useServerPrepStmts=true
+    username: root
+    password: Adamcai951109
+    driver-class-name: com.mysql.jdbc.Driver
+  jdbc:
+    template:
+      query-timeout: 3
 #server:
 #  servlet:
 #    context-path: /world

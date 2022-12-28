@@ -24,7 +24,7 @@ import org.springframework.context.annotation.ComponentScans;
  * @description @SpringBootApplication：这个是一个SpringBoot应用
  * */
 //@ServletComponentScan
-@SpringBootApplication(exclude = DataSourceAutoConfiguration.class)
+@SpringBootApplication
 //@EnableAutoConfiguration
 //@SpringBootConfiguration
 //@ComponentScan("com.cmqSystem.boot")
