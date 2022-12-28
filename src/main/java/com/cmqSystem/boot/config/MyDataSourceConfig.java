@@ -18,7 +18,8 @@ import java.util.Arrays;
  * @description
  * @create: 2022-12-28 14:43
  */
-@Configuration
+@Deprecated
+//@Configuration
 public class MyDataSourceConfig {
 
     // 默认的自动配置是判断容器中没有才会@ConditionalonMissingBean(DataSource.cLass)
