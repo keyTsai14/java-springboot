@@ -17,6 +17,20 @@ public class Junit5Test {
 
 
 
+
+    /**
+     * 前置条件
+     * 不同之处在于不满足的断言会使得测试方法失败，而不满足的前置条件只会使得测试方法的执行终止。
+     * */
+    @Test
+    @DisplayName("测试前置条件")
+    void testAssumptions() {
+
+        Assumptions.assumeTrue(false,"不是true");
+        System.out.println("1111");
+    }
+
+
     /**
      * 断言：前面断言失败，后面的代码都不会执行
      * */
