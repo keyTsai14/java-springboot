@@ -2,6 +2,7 @@ package com.cmqSystem.boot;
 
 import com.cmqSystem.boot.bean.User;
 import com.cmqSystem.boot.mapper.UserMapper;
+import com.cmqSystem.boot.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +10,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import javax.sql.DataSource;
+import java.util.List;
 
 /**
  * @author key
@@ -29,6 +31,9 @@ public class MainApplicationTests {
     @Autowired
     UserMapper userMapper;
 
+    @Autowired
+    UserService userService;
+
 
     @Test
     void contextLoads() {
@@ -43,6 +48,9 @@ public class MainApplicationTests {
     void testUserMapper() {
         User user = userMapper.selectById(1L);
 
+        List<User> list = userService.list();
+
         log.info("用户信息：{}",user);
+        log.info("用户信息s：{}",list);
     }
 }
