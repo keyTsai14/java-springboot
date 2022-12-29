@@ -1,8 +1,10 @@
 package com.cmqSystem.boot.controller;
 
 import com.cmqSystem.boot.bean.Account;
+import com.cmqSystem.boot.bean.City;
 import com.cmqSystem.boot.bean.User;
 import com.cmqSystem.boot.service.AccountService;
+import com.cmqSystem.boot.service.CityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
@@ -27,6 +29,14 @@ public class IndexController {
     JdbcTemplate jdbcTemplate;
     @Autowired
     AccountService accountService;
+    @Autowired
+    CityService cityService;
+
+    @ResponseBody
+    @GetMapping("city")
+    public City city(@RequestParam("id") Long id) {
+        return cityService.getById(id);
+    }
 
     @ResponseBody
     @GetMapping("getAcct")
