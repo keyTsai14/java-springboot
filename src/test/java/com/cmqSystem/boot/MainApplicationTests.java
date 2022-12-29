@@ -1,5 +1,7 @@
 package com.cmqSystem.boot;
 
+import com.cmqSystem.boot.bean.User;
+import com.cmqSystem.boot.mapper.UserMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +26,9 @@ public class MainApplicationTests {
     @Autowired
     DataSource dataSource;
 
+    @Autowired
+    UserMapper userMapper;
+
 
     @Test
     void contextLoads() {
@@ -32,5 +37,12 @@ public class MainApplicationTests {
         log.info("记录总数：{}",aLong);
 
         log.info("数据源类型：{}",dataSource.getClass());
+    }
+
+    @Test
+    void testUserMapper() {
+        User user = userMapper.selectById(1L);
+
+        log.info("用户信息：{}",user);
     }
 }

@@ -1,23 +1,9 @@
 package com.cmqSystem.boot;
 
-import ch.qos.logback.classic.db.DBHelper;
-import com.cmqSystem.boot.bean.Car;
-import com.cmqSystem.boot.bean.Pet;
-import com.cmqSystem.boot.bean.User;
-import com.cmqSystem.boot.config.MyConfig;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.SpringBootConfiguration;
-import org.springframework.boot.WebApplicationType;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
-import org.springframework.boot.autoconfigure.web.servlet.WebMvcProperties;
-import org.springframework.boot.context.properties.EnableConfigurationProperties;
-import org.springframework.boot.web.servlet.ServletComponentScan;
-import org.springframework.cache.interceptor.CacheAspectSupport;
 import org.springframework.context.ConfigurableApplicationContext;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.ComponentScans;
 
 /**
  * @author key
@@ -28,6 +14,7 @@ import org.springframework.context.annotation.ComponentScans;
 //@EnableAutoConfiguration
 //@SpringBootConfiguration
 //@ComponentScan("com.cmqSystem.boot")
+@MapperScan("com.cmqSystem.boot.mapper")
 public class MainApplication {
 
     public static void main(String[] args) {
