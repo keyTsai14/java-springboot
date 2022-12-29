@@ -96,6 +96,12 @@
             <artifactId>spring-boot-starter-data-redis</artifactId>
         </dependency>
 
+        <!--        导入jedis-->
+        <dependency>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
+        </dependency>
+
 <!--        <dependency>-->
 <!--            <groupId>org.apache.maven.plugins</groupId>-->
 <!--            <artifactId>maven-site-plugin</artifactId>-->
