@@ -20,4 +20,9 @@ public class CityService {
         return cityMapper.getById(id);
     }
 
+
+    public void saveCity(City city) {
+        cityMapper.insert(city);
+    }
+
 }
