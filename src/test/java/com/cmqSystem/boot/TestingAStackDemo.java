@@ -1,12 +1,14 @@
 package com.cmqSystem.boot;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Nested;
-import org.junit.jupiter.api.Test;
+import com.baomidou.mybatisplus.core.toolkit.StringUtils;
+import org.junit.jupiter.api.*;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.MethodSource;
+import org.junit.jupiter.params.provider.ValueSource;
 
 import java.util.EmptyStackException;
 import java.util.Stack;
+import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -19,6 +21,40 @@ import static org.junit.jupiter.api.Assertions.*;
 public class TestingAStackDemo {
 
     Stack<Object> stack;
+
+
+
+    /**
+     * 参数化测试
+     * */
+    @ParameterizedTest
+    @DisplayName("参数化测试")
+    @ValueSource(ints = {1,2,3,4,5})
+    void testParameterized(int i) {
+        System.out.println(i);
+    }
+
+    @ParameterizedTest
+    @ValueSource(strings = {"one", "two", "three"})
+    @DisplayName("参数化测试1")
+    public void parameterizedTest1(String string) {
+        System.out.println(string);
+        Assertions.assertTrue(StringUtils.isNotBlank(string));
+    }
+
+
+    @ParameterizedTest
+    @MethodSource("method")    //指定方法名
+    @DisplayName("方法来源参数")
+    public void testWithExplicitLocalMethodSource(String name) {
+        System.out.println(name);
+        Assertions.assertNotNull(name);
+    }
+
+    static Stream<String> method() {
+        return Stream.of("apple", "banana");
+    }
+
 
     @Test
     @DisplayName("new Stack()")
