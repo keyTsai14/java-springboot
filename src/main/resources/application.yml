@@ -58,6 +58,12 @@ spring:
   jdbc:
     template:
       query-timeout: 3
+  redis:
+    host: localhost
+    port: 6379
+    password:
+#    url: redis://
+
 #server:
 #  servlet:
 #    context-path: /world
