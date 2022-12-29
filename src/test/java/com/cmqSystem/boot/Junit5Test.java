@@ -36,6 +36,12 @@ public class Junit5Test {
     }
 
     @Test
+    @RepeatedTest(value = 3)
+    void test5() {
+        System.out.println(5);
+    }
+
+    @Test
     @Timeout(value = 500,unit = TimeUnit.MILLISECONDS)
     void testTimeout() throws InterruptedException {
         Thread.sleep(501);
