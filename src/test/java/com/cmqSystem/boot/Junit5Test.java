@@ -2,7 +2,10 @@ package com.cmqSystem.boot;
 
 import org.junit.jupiter.api.*;
 
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * @author key
@@ -11,6 +14,65 @@ import java.util.concurrent.TimeUnit;
  */
 
 public class Junit5Test {
+
+
+
+    /**
+     * 断言：前面断言失败，后面的代码都不会执行
+     * */
+    @Test
+    @DisplayName("simple assertion")
+    public void simple() {
+        assertEquals(3, 1 + 2, "simple math");
+        assertNotEquals(3, 1 + 1);
+
+        assertNotSame(new Object(), new Object());
+        Object obj = new Object();
+        assertSame(obj, obj);
+
+        assertFalse(1 > 2);
+        assertTrue(1 < 2);
+
+        assertNull(null);
+        assertNotNull(new Object());
+    }
+
+    @Test
+    @DisplayName("array assertion")
+    public void array() {
+        assertArrayEquals(new int[]{1, 2}, new int[] {1, 2});
+    }
+
+    @Test
+    @DisplayName("assert all")
+    public void all() {
+        assertAll("Math",
+                () -> assertEquals(2, 1 + 1),
+                () -> assertTrue(1 > 0)
+        );
+    }
+
+    @Test
+    @DisplayName("异常测试")
+    public void exceptionTest() {
+        ArithmeticException exception = Assertions.assertThrows(
+                //扔出断言异常
+                ArithmeticException.class, () -> System.out.println(1 % 0),"需要抛出异常");
+    }
+
+    @Test
+    @DisplayName("超时测试")
+    public void timeoutTest() {
+        //如果测试方法时间超过1s将会异常
+        Assertions.assertTimeout(Duration.ofMillis(1000), () -> Thread.sleep(500));
+    }
+
+    @Test
+    @DisplayName("fail")
+    public void shouldFail() {
+        fail("This should fail");
+    }
+
 
     @DisplayName("测试@DisplayName注解")
     @Test
