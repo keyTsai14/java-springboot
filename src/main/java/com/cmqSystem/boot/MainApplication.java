@@ -16,6 +16,7 @@ import org.springframework.context.ConfigurableApplicationContext;
 //@SpringBootConfiguration
 //@ComponentScan("com.cmqSystem.boot")
 @MapperScan("com.cmqSystem.boot.mapper")
+//@EnableAdminServer
 public class MainApplication {
 
     public static void main(String[] args) {
