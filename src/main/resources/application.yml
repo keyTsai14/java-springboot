@@ -84,13 +84,14 @@ mybatis:
 # management 是所有 Actuator的配置
 management:
   endpoints:
-    enabled-by-default: true # 默认开启所有监控端点
+    enabled-by-default: false # 默认开启所有监控端点
     web:
       exposure:
         include: '*' # 以web方式暴露所有端点
   endpoint:
     health:
       show-details: always
+      enabled: true
     info:
       enabled: true
     beans:
