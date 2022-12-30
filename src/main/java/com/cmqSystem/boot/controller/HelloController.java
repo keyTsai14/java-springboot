@@ -1,9 +1,11 @@
 package com.cmqSystem.boot.controller;
 
 import com.cmqSystem.boot.bean.Car;
+import com.cmqSystem.boot.bean.Employee;
 import com.cmqSystem.boot.bean.Person;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -20,6 +22,15 @@ public class HelloController {
     Car car;
     @Autowired
     Person person;
+    @Autowired
+    Employee employee;
+
+    @Value("${person.name:lisi}")
+    private String name;
+    @GetMapping("/hello02")
+    public Employee hello02() {
+        return employee;
+    }
 
     @RequestMapping("/hello")
     public String handle01(@RequestParam("name")String name) {

@@ -2,14 +2,15 @@ package com.cmqSystem.boot.config;
 
 import ch.qos.logback.classic.db.DBHelper;
 import com.cmqSystem.boot.bean.Car;
+import com.cmqSystem.boot.bean.Color;
 import com.cmqSystem.boot.bean.Pet;
 import com.cmqSystem.boot.bean.User;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
+import org.springframework.context.annotation.Profile;
+
 
 /**
  * @author key
@@ -53,6 +54,19 @@ public class MyConfig {
     public Pet tomcatPet() {
 
         return new Pet("tomcat",1.0,2);
+    }
+
+
+    @Bean
+    @Profile("test")
+    public Color red() {
+        return new Color();
+    }
+
+    @Bean
+    @Profile("prod")
+    public Color green() {
+        return new Color();
     }
 
 }

@@ -14,7 +14,6 @@ spring:
     contentnegotiation:
       favor-parameter: true #开启请求参数内容协商模式
 
-
   resources:
     cache:
       period: 11000
@@ -67,6 +66,8 @@ spring:
       notify:
         pagerduty:
           client-url: http://localhost:8080 # 可视化指标监控服务地址
+  profiles:
+    active: prod
 #    client-type: jedis
 #    jedis:
 #      pool:
