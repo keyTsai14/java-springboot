@@ -103,6 +103,14 @@
             <artifactId>jedis</artifactId>
         </dependency>
 
+        <!--        指标监控-->
+        <!--        http://localhost:8080/actuator/** -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+
+
 <!--        <dependency>-->
 <!--            <groupId>org.apache.maven.plugins</groupId>-->
 <!--            <artifactId>maven-site-plugin</artifactId>-->

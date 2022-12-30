@@ -79,3 +79,13 @@ mybatis:
   mapper-locations: classpath:mybatis/mapper/*.xml #sql映射文件位置
   configuration: # 指定全局配置文件的信息
     map-underscore-to-camel-case: true # 可以不写全局；配置文件，所有全局配置文件的配置都放在configuration配置项中即可
+
+
+# management 是所有 Actuator的配置
+management:
+  endpoints:
+    enabled-by-default: true # 默认开启所有监控端点
+    web:
+      exposure:
+        include: '*' # 以web方式暴露所有端点
+
