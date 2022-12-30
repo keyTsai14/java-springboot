@@ -8,6 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * @author key
  * @description
@@ -24,6 +27,22 @@ public class HelloController {
     Person person;
     @Autowired
     Employee employee;
+
+//    @Value("${MAVEN_HOME}")
+//    private String msg;
+
+    @Value("${os.name}")
+    private String osName;
+
+    @GetMapping("/msg")
+    public Map<String,Object> msg() {
+        Map<String,Object> res = new HashMap<>();
+//        res.put("msg",msg);
+        res.put("osName",osName);
+
+        return res;
+    }
+
 
     @Value("${person.name:lisi}")
     private String name;
