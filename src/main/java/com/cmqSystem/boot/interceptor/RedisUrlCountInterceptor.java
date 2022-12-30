@@ -1,8 +1,6 @@
 package com.cmqSystem.boot.interceptor;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
-import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 
 import javax.servlet.http.HttpServletRequest;
@@ -13,10 +11,10 @@ import javax.servlet.http.HttpServletResponse;
  * @description
  * @create: 2022-12-29 18:50
  */
-@Component
+//@Component
 public class RedisUrlCountInterceptor implements HandlerInterceptor {
 
-    @Autowired
+//    @Autowired
     StringRedisTemplate redisTemplate;
 
     @Override

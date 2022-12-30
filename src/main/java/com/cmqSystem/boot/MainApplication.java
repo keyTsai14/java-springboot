@@ -3,6 +3,7 @@ package com.cmqSystem.boot;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration;
 import org.springframework.context.ConfigurableApplicationContext;
 
 /**
@@ -10,7 +11,7 @@ import org.springframework.context.ConfigurableApplicationContext;
  * @description @SpringBootApplication：这个是一个SpringBoot应用
  * */
 //@ServletComponentScan
-@SpringBootApplication
+@SpringBootApplication(exclude = RedisAutoConfiguration.class)
 //@EnableAutoConfiguration
 //@SpringBootConfiguration
 //@ComponentScan("com.cmqSystem.boot")
