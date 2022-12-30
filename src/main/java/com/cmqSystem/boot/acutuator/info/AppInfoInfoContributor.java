@@ -1,4 +1,4 @@
-package com.cmqSystem.boot.acutuator.health.info;
+package com.cmqSystem.boot.acutuator.info;
 
 import org.springframework.boot.actuate.info.Info;
 import org.springframework.boot.actuate.info.InfoContributor;
