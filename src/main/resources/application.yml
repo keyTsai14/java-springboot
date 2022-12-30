@@ -88,4 +88,7 @@ management:
     web:
       exposure:
         include: '*' # 以web方式暴露所有端点
+  endpoint:
+    health:
+      show-details: always
 
