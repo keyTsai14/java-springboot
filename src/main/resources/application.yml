@@ -98,3 +98,9 @@ management:
       enabled: true
     metrics:
       enabled: true
+
+info:
+  appName: boot-admin
+  appVersion: 1.0.0
+  mavenProjectName: @project.artifactId@
+  mavenProjectVersion: @project.version@

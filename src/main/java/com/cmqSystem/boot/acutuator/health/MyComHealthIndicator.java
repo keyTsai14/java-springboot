@@ -1,4 +1,4 @@
-package com.cmqSystem.boot.health;
+package com.cmqSystem.boot.acutuator.health;
 
 import org.springframework.boot.actuate.health.AbstractHealthIndicator;
 import org.springframework.boot.actuate.health.Health;
