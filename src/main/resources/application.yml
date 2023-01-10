@@ -22,9 +22,9 @@ spring:
       max-file-size: 10MB
       max-request-size: 100MB
   datasource:
-    url: jdbc:mysql://localhost:3306/test_data?useSSL=false&useServerPrepStmts=true
+    url: jdbc:mysql://localhost:3306/mysql?useSSL=false&useServerPrepStmts=true
     username: root
-    password: Adamcai951109
+    password: gbf1234567890
     driver-class-name: com.mysql.jdbc.Driver
 
     druid:
@@ -58,9 +58,17 @@ spring:
     template:
       query-timeout: 3
   redis:
-    host: localhost
+    host: 43.139.108.162
     port: 6379
-    password:
+    password: root
+    database: 0
+    timeout: 1800000
+    jedis:
+      pool:
+        max-active: 20
+        max-wait: -1
+        max-idle: 5
+        min-idle: 0
   boot:
     admin:
       notify:

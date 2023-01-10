@@ -11,7 +11,7 @@ import org.springframework.context.ConfigurableApplicationContext;
  * @description @SpringBootApplication：这个是一个SpringBoot应用
  * */
 //@ServletComponentScan
-@SpringBootApplication(exclude = RedisAutoConfiguration.class)
+@SpringBootApplication
 //@EnableAutoConfiguration
 //@SpringBootConfiguration
 //@ComponentScan("com.cmqSystem.boot")
